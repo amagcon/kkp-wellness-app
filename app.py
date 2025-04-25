@@ -111,9 +111,35 @@ mental_health_access = st.slider("Seeking mental health support (counseling, the
 ##
 
 # Wellness interests
+# st.header("🌿 What Wellness Topics Are You Interested In?")
 
-# Wellness interests
-st.header("🌿 What Wellness Topics Are You Interested In?")
+# st.markdown("""
+# _These wellness activities are informed by evidence-based research from WHO, ANA Healthy Nurse Healthy Nation™, burnout recovery frameworks (Maslach, Schaufeli), CDC guidelines, and trauma-informed care best practices._
+
+# _Select all topics that you would be interested in attending or learning more about:_
+# """)
+
+# interests = st.multiselect("Choose all that apply:", [
+#     "Mindfulness & Meditation",
+#     "Yoga or Stretching",
+#     "Creative Arts Therapy (Art, Music, Dance)",
+#     "Group Fitness or Walking Clubs",
+#     "Spiritual or Faith-based Reflection",
+#     "One-on-One Peer Support or Coaching",
+#     "Mental Health Counseling or Therapy",
+#     "Journaling & Reflective Writing",
+#     "Sleep Health Education",
+#     "Nutrition & Hydration Habits",
+#     "Time Management & Work-Life Balance",
+#     "Resilience and Emotional Intelligence Training",
+#     "Gratitude Practices",
+#     "Digital Detox or Tech-life Balance",
+#     "Nature or Outdoor Wellness Activities",
+#     "Stress Reduction Workshops",
+#     "Trauma-Informed Care & Support Groups"
+# ])
+
+st.markdown("### 🌿 What Wellness Topics Are You Interested In?")
 
 st.markdown("""
 _These wellness activities are informed by evidence-based research from WHO, ANA Healthy Nurse Healthy Nation™, burnout recovery frameworks (Maslach, Schaufeli), CDC guidelines, and trauma-informed care best practices._
@@ -121,7 +147,8 @@ _These wellness activities are informed by evidence-based research from WHO, ANA
 _Select all topics that you would be interested in attending or learning more about:_
 """)
 
-interests = st.multiselect("Choose all that apply:", [
+# List of wellness interests
+interest_options = [
     "Mindfulness & Meditation",
     "Yoga or Stretching",
     "Creative Arts Therapy (Art, Music, Dance)",
@@ -139,7 +166,28 @@ interests = st.multiselect("Choose all that apply:", [
     "Nature or Outdoor Wellness Activities",
     "Stress Reduction Workshops",
     "Trauma-Informed Care & Support Groups"
-])
+]
+
+# Create three columns
+col1, col2, col3 = st.columns(3)
+
+# Collect checked interests
+interests = []
+
+for i, option in enumerate(interest_options):
+    if i % 3 == 0:
+        with col1:
+            if st.checkbox(option):
+                interests.append(option)
+    elif i % 3 == 1:
+        with col2:
+            if st.checkbox(option):
+                interests.append(option)
+    else:
+        with col3:
+            if st.checkbox(option):
+                interests.append(option)
+
 
 # 🔵 ADD THIS MISSING FIELD
 other_suggestions = st.text_area("Any other wellness topics or suggestions? (Optional)")
