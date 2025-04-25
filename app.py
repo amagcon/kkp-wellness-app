@@ -11,6 +11,8 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 client = gspread.authorize(creds)
 sheet = client.open("KKP Survey").worksheet("Responses")
 
+st.image("https://i.imgur.com/TqKbulk.png", width=200)
+
 # Title and intro
 st.title("🧘 Kapwa Kalinga Wellness Check-In")
 st.markdown("Welcome! Please take a moment to complete this short self-check and help us design better wellness programs for our healthcare community.")
@@ -72,3 +74,11 @@ if st.button("📩 Submit"):
         other_suggestions
     ])
     st.success("✅ Your response has been recorded. Thank you!")
+
+st.markdown(
+    "<div style='text-align: center;'>"
+    "<img src='https://i.imgur.com/J6FyF0Z.png' width='150'>"
+    "</div>",
+    unsafe_allow_html=True
+)
+
