@@ -157,7 +157,7 @@ if st.button("📩 Submit"):
     #     contact_email
     # ])
 #
-    sheet.append_row([
+    st.write("Collected values:", [
         timestamp,
         gender,
         age_group,
@@ -177,7 +177,6 @@ if st.button("📩 Submit"):
     ])
 
 
-
 #
     st.success("✅ Your response has been recorded. Thank you!")
 
@@ -187,4 +186,9 @@ st.markdown(
     "</div>",
     unsafe_allow_html=True
 )
+
+st.caption("This wellness tool is brought to you by PNANY Kapwa Kalinga Program 💙")
+
+st.caption("Reference: Schaufeli, W.B., Desart, S. and De Witte, H. (2020). *Burnout Assessment Tool (BAT)—development, validity, and reliability*. International Journal of Environmental Research and Public Health, 17(24), p. 9495. https://doi.org/10.3390/ijerph17249495")
+
 
