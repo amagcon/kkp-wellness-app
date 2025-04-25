@@ -5,7 +5,13 @@ from datetime import datetime
 
 # Authenticate with Google Sheets
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("service_account.json", scope)
+#creds = ServiceAccountCredentials.from_json_keyfile_name("service_account.json", scope)
+
+import json
+creds_dict = json.loads(st.secrets["GOOGLE_SHEETS_CREDENTIALS"])
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+
+
 client = gspread.authorize(creds)
 sheet = client.open("KKP Survey").worksheet("Responses")
 
