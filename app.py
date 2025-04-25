@@ -81,6 +81,22 @@ elif 14 <= burnout_score <= 16:
 else:
     st.error("🚨 Very High Risk – Please prioritize self-care and seek peer or professional support.")
 
+st.header("🧘 Current Self-Care and Wellness Practices")
+
+## baseline info
+st.markdown("""
+**How often do you currently engage in the following?**  
+(1 = Not at all  5 = Very regularly)
+""")
+
+sleep = st.slider("Sleep hygiene (consistent, restful sleep)", 1, 5)
+exercise = st.slider("Physical activity (e.g., walking, stretching, workouts)", 1, 5)
+nutrition = st.slider("Healthy nutrition and hydration habits", 1, 5)
+mindfulness = st.slider("Mindfulness or meditation practices", 1, 5)
+social_support = st.slider("Spending time with supportive people", 1, 5)
+spirituality = st.slider("Spiritual or faith-based practices (e.g., prayer, reflection)", 1, 5)
+mental_health_access = st.slider("Seeking mental health support (counseling, therapy)", 1, 5)
+##
 
 # Wellness interests
 st.header("🌿 What Wellness Topics Are You Interested In?")
@@ -123,6 +139,24 @@ if st.button("📩 Submit"):
     #     other_suggestions
     # ])
 
+    # sheet.append_row([
+    #     timestamp,
+    #     gender,
+    #     age_group,
+    #     role,
+    #     department,
+    #     years_exp,
+    #     shift_type,
+    #     pnany_member,
+    #     support_interest,
+    #     burnout_score,
+    #     q1, q2, q3, q4,
+    #     ", ".join(interests),
+    #     other_suggestions,
+    #     contact_name,
+    #     contact_email
+    # ])
+#
     sheet.append_row([
         timestamp,
         gender,
@@ -135,12 +169,16 @@ if st.button("📩 Submit"):
         support_interest,
         burnout_score,
         q1, q2, q3, q4,
+        sleep, exercise, nutrition, mindfulness, social_support, spirituality, mental_health_access,
         ", ".join(interests),
         other_suggestions,
         contact_name,
         contact_email
     ])
-    
+
+
+
+#
     st.success("✅ Your response has been recorded. Thank you!")
 
 st.markdown(
