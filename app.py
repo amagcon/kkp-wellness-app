@@ -112,6 +112,7 @@ mental_health_access = st.slider("Seeking mental health support (counseling, the
 
 # Wellness interests
 
+# Wellness interests
 st.header("🌿 What Wellness Topics Are You Interested In?")
 
 st.markdown("""
@@ -140,7 +141,8 @@ interests = st.multiselect("Choose all that apply:", [
     "Trauma-Informed Care & Support Groups"
 ])
 
-##
+# 🔵 ADD THIS MISSING FIELD
+other_suggestions = st.text_area("Any other wellness topics or suggestions? (Optional)")
 
 # Interest in KKP Peer Support Group
 st.markdown("### 💬 Interested in Peer Support?")
@@ -148,6 +150,8 @@ support_interest = st.radio(
     "Would you like to join the PNANY KKP Peer Support Group or be contacted for future Mental Health & Wellness Programs?",
     ["Yes", "No"]
 )
+
+##
 
 #st.markdown("📩 If yes, we will reach out to you via **wellness@pnanewyork.org**")
 
