@@ -84,10 +84,22 @@ else:
 st.header("🧘 Current Self-Care and Wellness Practices")
 
 ## baseline info
-st.markdown("""
-**How often do you currently engage in the following?**  
-(1 = Not at all  5 = Very regularly)
-""")
+# st.markdown("""
+# **How often do you currently engage in the following?**  
+# (1 = Not at all  5 = Very regularly)
+# """)
+##
+
+st.markdown("**How often do you currently engage in the following?**")
+
+# Display scale labels on both ends
+col1, col2, col3 = st.columns([1, 6, 1])
+with col1:
+    st.write("⬅️ Not at all")
+with col3:
+    st.write("Very regularly ➡️")
+
+##
 
 sleep = st.slider("Sleep hygiene (consistent, restful sleep)", 1, 5)
 exercise = st.slider("Physical activity (e.g., walking, stretching, workouts)", 1, 5)
