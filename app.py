@@ -39,8 +39,11 @@ pnany_member = st.radio("Are you a PNANY Member?", ["Yes", "No"])
 # Burnout Assessment
 st.header("💢 Burnout Self-Assessment")
 
-st.markdown("**Burnout Scoring Scale**  
-1 = Least / Never &nbsp;&nbsp;&nbsp;&nbsp; 5 = Most / Always")
+st.markdown("""
+**Burnout Scoring Scale**  
+1 = Least / Never  5 = Most / Always
+""")
+
 
 q1 = st.slider("I feel emotionally drained by my work", 1, 5)
 q2 = st.slider("I struggle to concentrate on tasks", 1, 5)
