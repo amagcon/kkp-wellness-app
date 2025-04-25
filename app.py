@@ -214,17 +214,53 @@ contact_email = st.text_input("Email address (optional)")
 
 
 # Submit form
-if st.button("📩 Submit"):
-    #timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-##
+# if st.button("📩 Submit"):
+#     #timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+# ##
     
+#     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#     date_prefix = datetime.now().strftime("%Y%m%d")
+#     random_digits = str(random.randint(1000, 9999))
+#     confirmation_number = f"KKP-{date_prefix}-{random_digits}"
+
+# ##    
+#     st.write("Collected values:", [
+#         timestamp,
+#         gender,
+#         age_group,
+#         role,
+#         department,
+#         years_exp,
+#         shift_type,
+#         pnany_member,
+#         support_interest,
+#         burnout_score,
+#         q1, q2, q3, q4,
+#         sleep, exercise, nutrition, mindfulness, social_support, spirituality, mental_health_access,
+#         ", ".join(interests),
+#         other_suggestions,
+#         contact_name,
+#         contact_email,
+#         confirmation_number
+#     ])
+
+
+# #
+#     st.success("✅ Your response has been recorded. Thank you for prioritizing your wellness with us. 🌿")
+
+# st.info(f"📋 Your Confirmation Number: **{confirmation_number}**")
+# st.caption("Please save this number for your reference.")
+##
+
+# Submit form
+if st.button("📩 Submit"):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     date_prefix = datetime.now().strftime("%Y%m%d")
     random_digits = str(random.randint(1000, 9999))
     confirmation_number = f"KKP-{date_prefix}-{random_digits}"
 
-##    
-    st.write("Collected values:", [
+    # Save to Google Sheet
+    sheet.append_row([
         timestamp,
         gender,
         age_group,
@@ -241,16 +277,15 @@ if st.button("📩 Submit"):
         other_suggestions,
         contact_name,
         contact_email,
-        confirmation_number
+        confirmation_number  # <-- added here
     ])
 
-
-#
+    # Show success message
     st.success("✅ Your response has been recorded. Thank you for prioritizing your wellness with us. 🌿")
+    st.info(f"📋 Your Confirmation Number: **{confirmation_number}**")
+    st.caption("Please save this number for your reference.")
 
-st.info(f"📋 Your Confirmation Number: **{confirmation_number}**")
-st.caption("Please save this number for your reference.")
-
+##
 st.markdown(
     "<div style='text-align: center;'>"
     "<img src='https://i.imgur.com/J6FyF0Z.png' width='300'>"
