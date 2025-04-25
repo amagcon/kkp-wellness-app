@@ -98,9 +98,31 @@ support_interest = st.radio(
 )
 st.markdown("📩 If yes, we will reach out to you via **wellness@pnanewyork.org**.")
 
+st.markdown("### 📝 Optional Contact Info")
+
+contact_name = st.text_input("Name (optional)")
+contact_email = st.text_input("Email address (optional)")
+
+
 # Submit form
 if st.button("📩 Submit"):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # sheet.append_row([
+    #     timestamp,
+    #     gender,
+    #     age_group,
+    #     role,
+    #     department,
+    #     years_exp,
+    #     shift_type,
+    #     pnany_member,
+    #     support_interest,
+    #     burnout_score,
+    #     q1, q2, q3, q4,
+    #     ", ".join(interests),
+    #     other_suggestions
+    # ])
+
     sheet.append_row([
         timestamp,
         gender,
@@ -114,8 +136,11 @@ if st.button("📩 Submit"):
         burnout_score,
         q1, q2, q3, q4,
         ", ".join(interests),
-        other_suggestions
+        other_suggestions,
+        contact_name,
+        contact_email
     ])
+    
     st.success("✅ Your response has been recorded. Thank you!")
 
 st.markdown(
