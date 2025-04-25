@@ -111,12 +111,18 @@ mental_health_access = st.slider("Seeking mental health support (counseling, the
 ##
 
 # Wellness interests
+
+
 st.header("🌿 What Wellness Topics Are You Interested In?")
-interests = st.multiselect("Choose all that apply:", [
-    "Mindfulness", "Yoga", "Group Fitness", "Peer Support",
-    "Creative Therapy", "Nutrition & Sleep", "1-on-1 Coaching"
-])
-other_suggestions = st.text_input("Other suggestions you'd like to see?")
+
+st.markdown("""
+_These wellness activities are informed by evidence-based research from WHO, ANA Healthy Nurse Healthy Nation™, burnout recovery frameworks (Maslach, Schaufeli), CDC guidelines, and trauma-informed care best practices._
+
+_Select all topics that you would be interested in attending or learning more about:_
+""")
+
+
+##
 
 # Interest in KKP Peer Support Group
 st.markdown("### 💬 Interested in Peer Support?")
