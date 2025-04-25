@@ -124,7 +124,7 @@ support_interest = st.radio(
     "Would you like to join the PNANY KKP Peer Support Group or be contacted for future Mental Health & Wellness Programs?",
     ["Yes", "No"]
 )
-st.markdown("📩 If yes, we will reach out to you via **wellness@pnanewyork.org**.")
+st.markdown("📩 If yes, we will reach out to you via **wellness@pnanewyork.org**")
 
 st.markdown("### 📝 Optional Contact Info")
 
