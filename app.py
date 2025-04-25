@@ -37,18 +37,37 @@ shift_type = st.radio("What shift do you usually work?", ["Day", "Night", "Rotat
 pnany_member = st.radio("Are you a PNANY Member?", ["Yes", "No"])
 
 # Burnout Assessment
+# st.header("💢 Burnout Self-Assessment")
+
+# st.markdown("""
+# **Burnout Scoring Scale**  
+# 1 = Least / Never  5 = Most / Always
+# """)
+
+
+# q1 = st.slider("I feel emotionally drained by my work", 1, 5)
+# q2 = st.slider("I struggle to concentrate on tasks", 1, 5)
+# q3 = st.slider("I feel mentally distant from my work", 1, 5)
+# q4 = st.slider("I feel emotionally overreactive or numb at work", 1, 5)
+
 st.header("💢 Burnout Self-Assessment")
 
-st.markdown("""
-**Burnout Scoring Scale**  
-1 = Least / Never  5 = Most / Always
-""")
+st.markdown("**Burnout Scoring Scale**")
 
+# Display labels on both ends of the scale
+col1, col2, col3 = st.columns([1, 6, 1])
+with col1:
+    st.write("⬅️ Least / Never")
+with col3:
+    st.write("Most / Always ➡️")
 
+# Burnout sliders
 q1 = st.slider("I feel emotionally drained by my work", 1, 5)
 q2 = st.slider("I struggle to concentrate on tasks", 1, 5)
 q3 = st.slider("I feel mentally distant from my work", 1, 5)
 q4 = st.slider("I feel emotionally overreactive or numb at work", 1, 5)
+
+
 burnout_score = q1 + q2 + q3 + q4
 
 st.write(f"**Your Burnout Score:** {burnout_score}/20")
