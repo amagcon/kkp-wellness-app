@@ -22,7 +22,7 @@ st.markdown(
 
 
 # Title and intro
-st.title("🧘 Kapwa Kalinga Wellness Check-In")
+st.title("🧘 Kapwa Kalinga Program Needs Assessment")
 st.markdown("Welcome! Please take a moment to complete this short self-check and help us design better wellness programs for our healthcare community.")
 
 # Demographics
