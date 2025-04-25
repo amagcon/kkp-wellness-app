@@ -3,6 +3,8 @@ import gspread
 import json
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
+import random
+
 
 # Authenticate with Google Sheets using secrets
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
@@ -213,41 +215,15 @@ contact_email = st.text_input("Email address (optional)")
 
 # Submit form
 if st.button("📩 Submit"):
+    #timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+##
+    
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    # sheet.append_row([
-    #     timestamp,
-    #     gender,
-    #     age_group,
-    #     role,
-    #     department,
-    #     years_exp,
-    #     shift_type,
-    #     pnany_member,
-    #     support_interest,
-    #     burnout_score,
-    #     q1, q2, q3, q4,
-    #     ", ".join(interests),
-    #     other_suggestions
-    # ])
+    date_prefix = datetime.now().strftime("%Y%m%d")
+    random_digits = str(random.randint(1000, 9999))
+    confirmation_number = f"KKP-{date_prefix}-{random_digits}"
 
-    # sheet.append_row([
-    #     timestamp,
-    #     gender,
-    #     age_group,
-    #     role,
-    #     department,
-    #     years_exp,
-    #     shift_type,
-    #     pnany_member,
-    #     support_interest,
-    #     burnout_score,
-    #     q1, q2, q3, q4,
-    #     ", ".join(interests),
-    #     other_suggestions,
-    #     contact_name,
-    #     contact_email
-    # ])
-#
+##    
     st.write("Collected values:", [
         timestamp,
         gender,
@@ -264,19 +240,28 @@ if st.button("📩 Submit"):
         ", ".join(interests),
         other_suggestions,
         contact_name,
-        contact_email
+        contact_email,
+        confirmation_number
     ])
 
 
 #
-    st.success("✅ Your response has been recorded. Thank you!")
+    st.success("✅ Your response has been recorded. Thank you for prioritizing your wellness with us. 🌿")
+
+st.info(f"📋 Your Confirmation Number: **{confirmation_number}**")
+st.caption("Please save this number for your reference.")
 
 st.markdown(
     "<div style='text-align: center;'>"
     "<img src='https://i.imgur.com/J6FyF0Z.png' width='300'>"
     "</div>",
-    unsafe_allow_html=True
-)
+    unsafe_allow_html=True)
+
+
+st.markdown("---")
+
+
+st.caption("Together, We Thrive.")
 
 st.caption("This wellness tool is brought to you by PNANY Kapwa Kalinga Program 💙")
 
