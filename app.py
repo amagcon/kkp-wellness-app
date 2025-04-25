@@ -112,7 +112,6 @@ mental_health_access = st.slider("Seeking mental health support (counseling, the
 
 # Wellness interests
 
-
 st.header("🌿 What Wellness Topics Are You Interested In?")
 
 st.markdown("""
@@ -121,6 +120,25 @@ _These wellness activities are informed by evidence-based research from WHO, ANA
 _Select all topics that you would be interested in attending or learning more about:_
 """)
 
+interests = st.multiselect("Choose all that apply:", [
+    "Mindfulness & Meditation",
+    "Yoga or Stretching",
+    "Creative Arts Therapy (Art, Music, Dance)",
+    "Group Fitness or Walking Clubs",
+    "Spiritual or Faith-based Reflection",
+    "One-on-One Peer Support or Coaching",
+    "Mental Health Counseling or Therapy",
+    "Journaling & Reflective Writing",
+    "Sleep Health Education",
+    "Nutrition & Hydration Habits",
+    "Time Management & Work-Life Balance",
+    "Resilience and Emotional Intelligence Training",
+    "Gratitude Practices",
+    "Digital Detox or Tech-life Balance",
+    "Nature or Outdoor Wellness Activities",
+    "Stress Reduction Workshops",
+    "Trauma-Informed Care & Support Groups"
+])
 
 ##
 
