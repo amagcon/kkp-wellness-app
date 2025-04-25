@@ -86,7 +86,7 @@ st.header("🧘 Current Self-Care and Wellness Practices")
 ## baseline info
 # st.markdown("""
 # **How often do you currently engage in the following?**  
-# (1 = Not at all  5 = Very regularly)
+# (1 = Not at all  5 = Alwaysy)
 # """)
 ##
 
@@ -97,7 +97,7 @@ col1, col2, col3 = st.columns([1, 6, 1])
 with col1:
     st.write("⬅️ Not at all")
 with col3:
-    st.write("Very regularly ➡️")
+    st.write("Always ➡️")
 
 ##
 
