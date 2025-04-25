@@ -39,6 +39,17 @@ pnany_member = st.radio("Are you a PNANY Member?", ["Yes", "No"])
 # Burnout Assessment
 st.header("💢 Burnout Self-Assessment")
 
+st.markdown("**Burnout Scoring Scale**  
+1 = Least / Never &nbsp;&nbsp;&nbsp;&nbsp; 5 = Most / Always")
+
+q1 = st.slider("I feel emotionally drained by my work", 1, 5)
+q2 = st.slider("I struggle to concentrate on tasks", 1, 5)
+q3 = st.slider("I feel mentally distant from my work", 1, 5)
+q4 = st.slider("I feel emotionally overreactive or numb at work", 1, 5)
+burnout_score = q1 + q2 + q3 + q4
+
+st.write(f"**Your Burnout Score:** {burnout_score}/20")
+
 if burnout_score <= 8:
     st.success("✅ Low Risk of Burnout – Keep up your self-care habits!")
 elif 9 <= burnout_score <= 13:
@@ -48,16 +59,6 @@ elif 14 <= burnout_score <= 16:
 else:
     st.error("🚨 Very High Risk – Please prioritize self-care and seek peer or professional support.")
 
-#st.markdown("**Burnout Scoring Scale**  
-#1 = Least / Never &nbsp;&nbsp;&nbsp;&nbsp; 5 = Most / Always")
-
-q1 = st.slider("I feel emotionally drained by my work", 1, 5)
-q2 = st.slider("I struggle to concentrate on tasks", 1, 5)
-q3 = st.slider("I feel mentally distant from my work", 1, 5)
-q4 = st.slider("I feel emotionally overreactive or numb at work", 1, 5)
-burnout_score = q1 + q2 + q3 + q4
-
-st.write(f"**Your Burnout Score:** {burnout_score}/20")
 
 # Wellness interests
 st.header("🌿 What Wellness Topics Are You Interested In?")
